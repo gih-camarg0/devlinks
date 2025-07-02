@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*medida atraves da borda, oq mantem o width */
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /*background-image: var(--bg-url); --onde puxa a imagem
+  background-repeat: no-repeat; --repetição
+  background-position: top center; --faz com que a img seja centralizada apartir do topo
+  background-size: cover; --imagem ocupa todo o espaço em branco*/
+
+  /* SHORTHAND | background: cor imagem repetição posição/tamanho */
+  background: var(--bg-url) no-repeat top center/cover;
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  /* SHORTHAND | margin: top right bottom left */
+  margin: 56px auto 0px;
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#switch {
+  position: relative; /*faz com que o proximo position da mesma tag seja relativo a ele*/
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute; /*quando damos a propriedade position o valor absolute, imediatamente temos uma sobreposição*/
+  top: 50%;
+  left: 0;
+  z-index: 1; /*isso diz que subiu uma camada*/
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  border-radius: 9999px;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /*coloca tambem o -web-kit pq alguns browser só aceitam assim*/
+}
+
+#profile img {
+  /*img é um elemento in-line(em linha), em elementos in-line não funciona o margin:auto */
+  /*display: block;
+  margin: auto; pode fazer isso para centralizar*/
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+ul {
+  list-style: none;
+  display: flex; /*trabalha com elementos dentro da caixa, faz com que eles fiquem um ao lado do outro*/
+  flex-direction: column; /*deixa os elementos do flex um abaixo do outro*/
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center; /* alinha ao centro pelo eixo y*/
+  align-items: center; /* alinha ao centro pelo eixo x*/
+  padding: 16px 24px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /*coloca tambem o -web-kit pq alguns browser só aceitam assim*/
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  border: 1.5px solid var(--text-color);
+  background: var(--surface-color-hover);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+}
