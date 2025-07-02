@@ -67,11 +67,13 @@ body {
   left: 0;
   z-index: 1; /*isso diz que subiu uma camada*/
   transform: translateY(-50%);
+
+  animation: slide-back 0.2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
+  /*forwards => é para manter a animção apos feita no to*/
 }
 
 #switch span {
@@ -85,6 +87,10 @@ body {
   -webkit-backdrop-filter: blur(
     4px
   ); /*coloca tambem o -web-kit pq alguns browser só aceitam assim*/
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #profile img {
@@ -167,5 +173,28 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animações */
+@keyframes slide-in {
+  from {
+    /*onde começa */
+    left: 0;
+  }
+  to {
+    /*onde termina */
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    /*onde começa */
+    left: 50%;
+  }
+  to {
+    /*onde termina */
+    left: 0;
   }
 }
