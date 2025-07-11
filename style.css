@@ -46,10 +46,13 @@ body {
 
 #profile {
   text-align: center;
+  padding: 24px;
+}
+
+#profile img {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  padding: 24px;
 }
 
 #switch {
