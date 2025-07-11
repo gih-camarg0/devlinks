@@ -46,6 +46,8 @@ body {
 
 #profile {
   text-align: center;
+  width: 350px;
+  left: 350px;
   padding: 24px;
 }
 
