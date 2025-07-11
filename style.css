@@ -47,7 +47,7 @@ body {
 #profile {
   text-align: center;
   width: 350px;
-  left: 350px;
+  height: 350px;
   border-radius: 50%;
   padding: 24px;
 }
