@@ -103,7 +103,8 @@ body {
   /*img é um elemento in-line(em linha), em elementos in-line não funciona o margin:auto */
   /*display: block;
   margin: auto; pode fazer isso para centralizar*/
-  width: 112px;
+  width: 200px;
+  height: 200px;
 }
 
 #profile p {
